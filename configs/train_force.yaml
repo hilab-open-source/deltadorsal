@@ -1,0 +1,39 @@
+defaults:
+  - _self_
+  - data: egodorsalforce
+  - model: deltadorsalforce
+  - callbacks: default
+  - logger: wandb
+  - paths: default
+  - hydra: default
+
+  - experiment: null
+
+  - hparams_search: null
+
+  - debug: null
+
+logger:
+  wandb:
+    project: "egodorsalforce"
+
+callbacks:
+  model_checkpoint:
+    monitor: "val/acc"
+  early_stopping:
+    monitor: "val/acc"
+
+task_name: "egodorsalforce"
+
+tags: ["force"]
+
+min_epochs: 1
+max_epochs: 30
+
+train: True
+
+test: True
+
+ckpt_path: null
+
+seed: null

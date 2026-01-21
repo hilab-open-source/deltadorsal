@@ -1,0 +1,37 @@
+_target_: src.models.deltadorsalforce_module.DeltaDorsalForceModule
+
+class_counts: [30714, 1860, 1860, 1860, 1860, 1860, 1860] # for weighting the loss
+
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  lr: 0.0005
+  weight_decay: 1e-2
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  factor: 0.1
+  patience: 10
+
+backbone:
+  _target_: src.models.deltadorsalnet.DeltaDorsalNet
+  # model_name: dinov3_vitb16
+  # model_path: _DATA/dinov3/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
+  model_name: dinov3_vitl16
+  model_path: _DATA/dinov3/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+  n_unfrozen_blocks: 0
+  out_dim: 256
+  use_delta: true
+  use_orig_feat: false
+
+head:
+  _target_: src.models.deltadorsalnet.ForceHead
+  z_dim: 256 # same as the backbone mid dim
+  out_dim: 1
+  hidden_dim: 512
+  pool: avg
+  n_classes: 7
+
+compile: false

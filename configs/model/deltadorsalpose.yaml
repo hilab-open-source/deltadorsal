@@ -1,0 +1,47 @@
+_target_: src.models.deltadorsalpose_module.DeltaDorsalPoseModule
+
+lambda_p: 6e-4
+mano_path: _DATA/mano/models/MANO_RIGHT.pkl
+
+loss_weights:
+  keypoints_3d: 0.05
+  pose: 0.001
+
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  lr: 0.001
+  weight_decay: 1e-2
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  factor: 0.1
+  patience: 5
+
+backbone:
+  _target_: src.models.deltadorsalnet.DeltaDorsalNet
+  # model_name: dinov3_vitb16
+  # model_path: _DATA/dinov3/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth
+  # embed_dim: 768
+  model_name: dinov3_vitl16
+  model_path: _DATA/dinov3/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth
+  n_unfrozen_blocks: 3
+  out_dim: 256
+  use_delta: true
+  use_orig_feat: true
+
+head:
+  _target_: src.models.deltadorsalnet.ResidualPoseHead
+  z_dim: 256 # same as the backbone mid dim
+  out_dim: 45
+  prior_dim: 45
+  hidden_dim: 512
+  use_film: false
+  use_prior: false
+  gated: false
+  pool: avg
+
+
+compile: false
