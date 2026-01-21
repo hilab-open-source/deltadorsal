@@ -4,7 +4,7 @@ Code repository for the paper: **DeltaDorsal: Enhancing Hand Pose Estimation wit
 
 
 This work is licensed under a
-[Creative Commons Attribution 4.0 International License][cc-by].
+[Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
 ### [[Project Page]]() [[DOI]]() [[arXiv]]()
 
@@ -361,11 +361,6 @@ During validation and testing, the following metrics are logged:
 - `model.backbone.n_unfrozen_blocks`: Number of unfrozen transformer blocks
 - `model.optimizer.lr`: Learning rate
 - `model.scheduler`: Learning rate scheduler config
-
-## Model Architecture
-
-
-The model uses a residual prediction approach where it predicts corrections to a prior pose estimate (from HaMeR), enabling more stable training and better generalization.
 
 ## Acknowledgements
 
