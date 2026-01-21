@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="DeltaDorsal">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="Enhancing Hand Pose Estimation with DorsalFeatures in Egocentric Views">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="Hand Tracking, Pose Estimation, Human-Centered Computing, Interaction Techniques, Mixed Reality,Computer Vision, AI, Machine Learning">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="William Huang, Siyou Pei, Leyi Zou, Eric J Gonzalez, Ishan Chatterjee, Yang Zhang">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="HiLab">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="DeltaDorsal">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="Enhancing Hand Pose Estimation with Dorsal Features in Egocentric Views">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://hilab-open-source.github.io/deltadorsal/">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="static/images/social-preview.png">
+  <meta property="og:image:width" content="2680">
+  <meta property="og:image:height" content="880">
+  <meta property="og:image:alt" content="Accessibility Scout Research Preview">
+  <meta property="article:published_time" content="2025-09-26T00:00:00.000Z">
+  <meta property="article:author" content="William Huang">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Hand Pose Estimation">
+  <meta property="article:tag" content="Computer vision">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@whuanghci">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="DeltaDorsal">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="Enhancing Hand Pose Estimation with Dorsal Features in Egocentric Views">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="static/images/social-preview.png">
+  <meta name="twitter:image:alt" content="DeltaDorsal Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="DeltaDorsal: Enhancing Hand Pose Estimation with Dorsal Features in Egocentric Views">
+  <meta name="citation_author" content="Huang, William">
+  <meta name="citation_author" content="Pei, Siyou">
+  <meta name="citation_author" content="Zou, Leyi">
+  <meta name="citation_author" content="Gonzalez, Eric J.">
+  <meta name="citation_author" content="Chatterjee, Ishan">
+  <meta name="citation_author" content="Zhang, Yang">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="ACM CHI 2026">
+  <meta name="citation_pdf_url" content="https://www.arxiv.org/pdf/XXX.XXXX">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>DeltaDorsal: Enhancing Hand Pose Estimation with Dorsal Features in Egocentric Views</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "DeltaDorsal",
+    "description": "Enhancing Hand Pose Estimation with Dorsal Features in Egocentric Views",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "William Huang",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "University of California, Los Angeles"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Siyou Pei",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "University of California, Los Angeles"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Leyi Zou",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "University of California, Los Angeles"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Eric J. Gonzalez",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Google"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Ishan Chatterjee",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Google"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Yang Zhang",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "University of California, Los Angeles"
+        }
+      }
+    ],
+    "datePublished": "2026-04-13",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ACM CHI 2026"
+    },
+    "url": "https://hilab-open-source.github.io/deltadorsal/",
+    "image": "static/images/social_preview.png",
+    "keywords": ["Hand Tracking, Pose Estimation, Human-Centered Computing, Interaction Techniques, Mixed Reality,Computer Vision, AI, Machine Learning"]
+    "abstract": "The proliferation of XR devices has made egocentric hand pose estimation a vital task, yet this perspective is inherently challenged by frequent finger occlusions. To address this, we propose a novel approach that leverages the rich information in dorsal hand skin deformation, unlocked by recent advances in dense visual featurizers. We introduce a dual-stream delta encoder that learns pose by contrasting features from a dynamic hand with a baseline relaxed position. Our evaluation demonstrates that, using only cropped dorsal images, our method reduces the Mean Per Joint Angle Error (MPJAE) by 18% in self-occluded scenarios (fingers >=50% occluded) compared to state-of-the-art techniques that depend on the whole hand's geometry and large model backbones. Consequently, our method not only enhances the reliability of downstream tasks like index finger pinch and tap estimation in occluded scenarios but also unlocks new interaction paradigms, such as detecting isometric force for a surface \"click\" without visible movement while minimizing model size.",
+    "citation": "TODO: PLACEHOLDER",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://hilab-open-source.github.io/deltadorsal/"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Human Computer Interaction"
+      },
+      {
+        "@type": "Thing",
+        "name": "Interaction Techniques"
+      },
+      {
+        "@type": "Thing",
+        "name": "Computer Vision"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HiLab",
+    "url": "https://hilab.dev",
+    "logo": "static/images/favicon.ico",
+    "sameAs": [
+      "https://twitter.com/whuanghci",
+      "https://github.com/whuang37"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- More Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works from Our Lab</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <!-- TODO: Replace with your lab's related works -->
+        <a href="https://dl.acm.org/doi/10.1145/3613904.3642555" class="work-item" target="_blank">
+          <div class="work-info">
+            <!-- TODO: Replace with actual paper title -->
+            <h5>WheelPose: Data Synthesis Techniques to Improve Pose Estimation Performance on Wheelchair Users</h5>
+            <!-- TODO: Replace with brief description -->
+            <p>Synthetic data to improve pose estimation for people in wheelchairs.</p>
+            <!-- TODO: Replace with venue and year -->
+            <span class="work-venue">ACM CHI 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://dl.acm.org/doi/10.1145/3746059.3747624" class="work-item" target="_blank">
+          <div class="work-info">
+            <!-- TODO: Replace with actual paper title -->
+            <h5>Accessibility Scout: Personalized Accessibility Scans of Built Environments</h5>
+            <!-- TODO: Replace with brief description -->
+            <p>Agentic reasoning and workflows for personalized accessibility assessments.</p>
+            <!-- TODO: Replace with venue and year -->
+            <span class="work-venue">ACM UIST 2025</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <!-- TODO: Add more related works or remove extra items -->
+        <!-- <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 2</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Paper Title 3</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a> -->
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">DeltaDorsal: Enhancing Hand Pose Estimation with Dorsal Features in Egocentric Views</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a href="https://whuang37.github.io" target="_blank">William Huang¹</a>,</span>
+                <span class="author-block">
+                  <a href="https://www.sypei.com" target="_blank">Siyou Pei¹</a>,</span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/leyi-zou-931788285/" target="_blank">Leyi Zou¹</a>,</span>
+                    <span class="author-block">
+                      <a href="https://https://www.ejgonzalez.me/" target="_blank">Eric J. Gonzalez²</a>,</span>
+                      <span class="author-block">
+                        <a href="https://ishanchatterjee.weebly.com/" target="_blank">Ishan Chatterjee²</a>,</span>
+                        <span class="author-block">
+                          <a href="https://yangzhang.dev" target="_blank">Yang Zhang¹</a>
+                    </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <!-- TODO: Replace with your institution and conference/journal info -->
+                    <span class="author-block">¹University of California, Los Angeles<br>²Google<br>ACM CHI 2026</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- TODO: Update with your arXiv paper ID -->
+                      <span class="link-block">
+                        <a href="PLACEHOLDER" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- TODO: Add your supplementary material PDF or remove this section -->
+                    <!-- <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                  <!-- TODO: Replace with your GitHub repository URL -->
+                  <span class="link-block">
+                    <a href="https://github.com/hilab-open-source/deltadorsal" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- TODO: Update with your arXiv paper ID -->
+                <span class="link-block">
+                  <a href="https://www.arxiv.org/abs/XXXX.XXXX" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- TODO: Replace with your teaser video -->
+      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+        <!-- TODO: Add your video file path here -->
+        <source src="static/videos/teaser.mp4" type="video/mp4">
+      </video>
+      <!-- TODO: Replace with your video description -->
+      <!-- <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.
+      </h2> -->
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p>
+              The proliferation of XR devices has made egocentric hand pose estimation a vital task, yet this perspective is inherently challenged by frequent finger occlusions. To address this, we propose a novel approach that leverages the rich information in dorsal hand skin deformation, unlocked by recent advances in dense visual featurizers. We introduce a dual-stream delta encoder that learns pose by contrasting features from a dynamic hand with a baseline relaxed position. Our evaluation demonstrates that, using only cropped dorsal images, our method reduces the Mean Per Joint Angle Error (MPJAE) by 18% in self-occluded scenarios (fingers >=50% occluded) compared to state-of-the-art techniques that depend on the whole hand's geometry and large model backbones. Consequently, our method not only enhances the reliability of downstream tasks like index finger pinch and tap estimation in occluded scenarios but also unlocks new interaction paradigms, such as detecting isometric force for a surface "click" without visible movement while minimizing model size.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- TODO: Replace with your research result images -->
+        <img src="static/images/example-outputs.jpg" alt="Example of accessibility annotations found using Accessibility Scout" loading="lazy"/>
+        <!-- TODO: Replace with description of this result -->
+        <h2 class="subtitle has-text-centered">
+          Visualization of different accessibility concerns highlighted on images of environments.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/system-diagram.jpg" alt="Accessibility Scout's system diagram. Users first submit an image of an environment and their intent. Accessibility Scout identifies potential tasks and their actions to predict environment concerns. The user can then provide feedback on these concerns to update their user model, which leads to improved accessibility assessment in future scans. " loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          System diagram of Accessibility Scout.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/ui-flow.jpg" alt="Accessibility Scout's UI flow." loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         UI windows for our system annotated with how the user interacts.
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/user-study-results.jpg" alt="Results from our user study. We found that Accessibility Scout meaningfully adapted to user needs and found more relevant and useful annotations through our collaborative annotation process." loading="lazy"/>
+      <h2 class="subtitle has-text-centered">
+        Likert scores for Accessibility Scout.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<!-- Youtube video -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@misc{huangAccessibilityScoutPersonalized2025,
+  title = {Accessibility {{Scout}}: {{Personalized Accessibility Scans}} of {{Built Environments}}},
+  shorttitle = {Accessibility {{Scout}}},
+  author = {Huang, William and Su, Xia and Froehlich, Jon E. and Zhang, Yang},
+  year = {2025},
+  month = jul,
+  primaryclass = {cs},
+  doi = {10.1145/3746059.3747624},
+  urldate = {2025-09-12},
+  archiveprefix = {arXiv},
+  copyright = {All rights reserved},
+}
+</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
