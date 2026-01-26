@@ -6,7 +6,7 @@ Code repository for the paper: **DeltaDorsal: Enhancing Hand Pose Estimation wit
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
 
-### [[Project Page (UNDER CONSTRUCTION)]]() [[DOI (UNDER CONSTRUCTION)]]() [[arXiv (UNDER CONSTRUCTION)]]()
+### [[Project Page (UNDER CONSTRUCTION)]]() [[DOI (UNDER CONSTRUCTION)]]() [[arXiv]](https://arxiv.org/abs/2601.15516)
 
 ![Teaser Image](./assets/teaser.png)
 
