@@ -362,11 +362,6 @@ During validation and testing, the following metrics are logged:
 - `model.optimizer.lr`: Learning rate
 - `model.scheduler`: Learning rate scheduler config
 
-## Model Architecture
-
-
-The model uses a residual prediction approach where it predicts corrections to a prior pose estimate (from HaMeR), enabling more stable training and better generalization.
-
 ## Acknowledgements
 
 Parts of the code are taken or adapted from the following repositories:
@@ -388,7 +383,23 @@ If extending or using our work, please cite the following papers:
 
 ```
 
-PLACEHOLDER
+
+
+@misc{huangDeltaDorsalEnhancingHand2026,
+  title = {{{DeltaDorsal}}: {{Enhancing Hand Pose Estimation}} with {{Dorsal Features}} in {{Egocentric Views}}},
+  shorttitle = {{{DeltaDorsal}}},
+  author = {Huang, William and Pei, Siyou and Zou, Leyi and Gonzalez, Eric J. and Chatterjee, Ishan and Zhang, Yang},
+  year = 2026,
+  month = jan,
+  number = {arXiv:2601.15516},
+  eprint = {2601.15516},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2601.15516},
+  urldate = {2026-02-08},
+  archiveprefix = {arXiv}
+}
+
 
 @article{MANO:SIGGRAPHASIA:2017,
   title = {Embodied Hands: Modeling and Capturing Hands and Bodies Together},
