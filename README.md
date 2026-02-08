@@ -6,7 +6,7 @@ Code repository for the paper: **DeltaDorsal: Enhancing Hand Pose Estimation wit
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
 
-### [[Project Page (UNDER CONSTRUCTION)]]() [[DOI (UNDER CONSTRUCTION)]]() [[arXiv]](https://arxiv.org/abs/2601.15516)
+### [[Project Page (UNDER CONSTRUCTION)]]() [[DOI (UNDER CONSTRUCTION)]]() [[arXiv]](https://arxiv.org/abs/2601.15516) [[Hugging Face]](https://huggingface.co/whuang37/deltadorsal) [[Dataset]](https://huggingface.co/datasets/whuang37/egodorsal)
 
 ![Teaser Image](./assets/teaser.png)
 
@@ -69,9 +69,13 @@ You only need to put ```MANO_RIGHT.pkl``` under the  ```_DATA/mano``` folder.
 wandb login
 ```
 
+### Model Weights
+
+All model weights can be found in the related huggingface repository found [here](https://huggingface.co/whuang37/deltadorsal).
+
 ## Data Preparation
 
-We organize our data as follows according to the following setup which can interface with our prewritten dataset modules found in ```src/datasets/```. If you want to use your own data, please feel free to write your own modules.
+We organize our data as follows according to the following setup which can interface with our prewritten dataset modules found in ```src/datasets/```. If you want to use your own data, please feel free to write your own modules. A subset of this data can be found [here](https://huggingface.co/datasets/whuang37/egodorsal).
 
 ```
 .                                         # ROOT
