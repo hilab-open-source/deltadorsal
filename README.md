@@ -6,7 +6,7 @@ Code repository for the paper: **DeltaDorsal: Enhancing Hand Pose Estimation wit
 This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
 
-### [[Project Page (UNDER CONSTRUCTION)]]() [[DOI (UNDER CONSTRUCTION)]]() [[arXiv]](https://arxiv.org/abs/2601.15516) [[Hugging Face]](https://huggingface.co/whuang37/deltadorsal) [[Dataset]](https://huggingface.co/datasets/whuang37/egodorsal)
+### [[Project Page]](https://hilab-open-source.github.io/deltadorsal/) [[DOI (UNDER CONSTRUCTION)]]() [[arXiv]](https://arxiv.org/abs/2601.15516) [[Model Weights]](https://huggingface.co/whuang37/deltadorsal) [[Dataset]](https://huggingface.co/datasets/whuang37/egodorsal)
 
 ![Teaser Image](./assets/teaser.png)
 
