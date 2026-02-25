@@ -345,16 +345,16 @@
                 <a href="https://huggingface.co/whuang37/deltadorsal" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <i class="fa-brands fa-huggingface"></i>
+                    <i class="fas fa-brain"></i>
                   </span>
-                  <span>Hugging Face</span>
+                  <span>Model Weights</span>
                 </a>
               </span>
               <span class="link-block">
                 <a href="https://huggingface.co/datasets/whuang37/egodorsal" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <i class="fa-solid fa-database"></i>
+                    <i class="fas fa-database"></i>
                   </span>
                   <span>Dataset Sample</span>
                 </a>
@@ -397,10 +397,11 @@
           <p>
               The proliferation of XR devices has made egocentric hand pose estimation a vital task, yet this perspective is inherently challenged by frequent finger occlusions. To address this, we propose a novel approach that leverages the rich information in dorsal hand skin deformation, unlocked by recent advances in dense visual featurizers. We introduce a dual-stream delta encoder that learns pose by contrasting features from a dynamic hand with a baseline relaxed position. Our evaluation demonstrates that, using only cropped dorsal images, our method reduces the Mean Per Joint Angle Error (MPJAE) by 18% in self-occluded scenarios (fingers >=50% occluded) compared to state-of-the-art techniques that depend on the whole hand's geometry and large model backbones. Consequently, our method not only enhances the reliability of downstream tasks like index finger pinch and tap estimation in occluded scenarios but also unlocks new interaction paradigms, such as detecting isometric force for a surface "click" without visible movement while minimizing model size.
           </p>
-          <figure class="image is-16by9" style="margin-top: 1.5rem;">
+          <figure class="image" style="margin-top: 1.5rem;">
             <img src="static/images/social-preview.png"
                  alt="Overview figure illustrating DeltaDorsal and dorsal hand feature-based pose estimation"
-                 loading="lazy">
+                 loading="lazy"
+                 style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
           </figure>
         </div>
       </div>
