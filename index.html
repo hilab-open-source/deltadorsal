@@ -397,12 +397,6 @@
           <p>
               The proliferation of XR devices has made egocentric hand pose estimation a vital task, yet this perspective is inherently challenged by frequent finger occlusions. To address this, we propose a novel approach that leverages the rich information in dorsal hand skin deformation, unlocked by recent advances in dense visual featurizers. We introduce a dual-stream delta encoder that learns pose by contrasting features from a dynamic hand with a baseline relaxed position. Our evaluation demonstrates that, using only cropped dorsal images, our method reduces the Mean Per Joint Angle Error (MPJAE) by 18% in self-occluded scenarios (fingers >=50% occluded) compared to state-of-the-art techniques that depend on the whole hand's geometry and large model backbones. Consequently, our method not only enhances the reliability of downstream tasks like index finger pinch and tap estimation in occluded scenarios but also unlocks new interaction paradigms, such as detecting isometric force for a surface "click" without visible movement while minimizing model size.
           </p>
-          <figure class="image" style="margin-top: 1rem;">
-            <img src="static/images/social-preview.png"
-                 alt="Overview figure illustrating DeltaDorsal and dorsal hand feature-based pose estimation"
-                 loading="lazy"
-                 style="display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 12px;">
-          </figure>
         </div>
       </div>
     </div>
@@ -410,6 +404,25 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- Overview figure -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <figure class="image" style="margin-top: 0;">
+          <img src="static/images/social-preview.png"
+               alt="Overview figure illustrating DeltaDorsal and dorsal hand feature-based pose estimation"
+               loading="lazy"
+               style="display: block; margin: 0 auto; max-width: 100%; height: auto; border-radius: 12px;">
+          <figcaption class="has-text-centered" style="margin-top: 0.75rem; color: var(--text-light, #666); font-size: 0.9rem;">
+            Delta dorsal uses dense visual featurizers to extract dorsal skin deformations from the back of the hand. By comparing the visual features from a neutral and current hand pose, DeltaDorsal isolates these changes and then uses this to predict hand posture.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End overview figure -->
 
 <!-- Image carousel -->
 <section class="hero is-small">
