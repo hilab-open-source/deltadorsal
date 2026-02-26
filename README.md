@@ -386,9 +386,6 @@ Parts of the code are taken or adapted from the following repositories:
 If extending or using our work, please cite the following papers:
 
 ```
-
-
-
 @misc{huangDeltaDorsalEnhancingHand2026,
   title = {{{DeltaDorsal}}: {{Enhancing Hand Pose Estimation}} with {{Dorsal Features}} in {{Egocentric Views}}},
   shorttitle = {{{DeltaDorsal}}},
@@ -403,7 +400,6 @@ If extending or using our work, please cite the following papers:
   urldate = {2026-02-08},
   archiveprefix = {arXiv}
 }
-
 
 @article{MANO:SIGGRAPHASIA:2017,
   title = {Embodied Hands: Modeling and Capturing Hands and Bodies Together},
@@ -429,6 +425,4 @@ If extending or using our work, please cite the following papers:
   urldate = {2025-08-25},
   archiveprefix = {arXiv}
 }
-
-
 ```
