@@ -245,10 +245,10 @@ python src/train_pose.py model.optimizer.lr=1e-4
 # Resume from checkpoint
 python src/train_pose.py ckpt_path=path/to/checkpoint.ckpt
 
-# Train only (skip testing)
+# Train only
 python src/train_pose.py test=False
 
-# Test only (skip training)
+# Test only
 python src/train_pose.py train=False test=True ckpt_path=path/to/checkpoint.ckpt
 ```
 
